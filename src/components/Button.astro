@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components'
+interface Props {
+    text: string;
+    link: string;
+    icon: string;
+    textColor?: string;
+    bgColor?: string;
+    iconSize?: number;
+    iconDisplay?: string
+}
+
+const { iconDisplay = "block", text, link, icon, textColor = "black", iconSize = 20, bgColor = "blue-500"} = Astro.props;
+---
+
+<div class=`w-fit rounded bg-${bgColor}`>
+    <a href={link} class=`flex p-3 text-${textColor} justify-center gap-1 items-center decoration-inherit text-inherit block h-full`>
+        <Icon class={iconDisplay} size={iconSize} name={icon} />
+        { text }
+    </a>
+</div>
